@@ -1,7 +1,7 @@
 # Site settings
 title: Gh Qi's Blog
-SEOTitle: Welcome
-header-img: img/post-bg-universe.jpg
+SEOTitle: GhQiBlog
+header-img: img/home-1.jpg
 email: qiguoheng@gmail.com
 description: "Talk Is Cheap Show Me The Code  "
 keyword: "wsc, wsccoder Blog, Gh Qi's Blog, Java, Go, iPhone, mac pro, book"
@@ -20,7 +20,7 @@ sidebar-avatar: /img/about-wsc-gentle.jpg      # use absolute URL, seeing it's u
 RSS: false
 # weibo_username:     
 zhihu_username:      
-github_username:    wsccoder
+github_username:    chyiever
 facebook_username:   
 jianshu_username:    
 #twitter_username:   
@@ -64,9 +64,9 @@ gitalk:
   enable: true    #是否开启Gitalk评论
   clientID: 0d93476437f2d8c5a34c                            #生成的clientID
   clientSecret: 0bcc9f153b8b22289848c7ef1a536a48f1136d98    #生成的clientSecret
-  repo: wsccoder.github.io    #仓库名称
-  owner: wsccoder    #github用户名
-  admin: wsccoder
+  repo: chyiever.github.io    #仓库名称
+  owner: chyiever    #github用户名
+  admin: chyiever
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
