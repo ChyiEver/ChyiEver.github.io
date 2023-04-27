@@ -99,7 +99,7 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "Wlofy Zhang",
+        title: "Wolfy Zhang",
         href: "https://wolfyzhang.com/"
     }
 ]
