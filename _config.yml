@@ -1,6 +1,6 @@
 # Site settings
 title: Gh Qi's Blog
-SEOTitle: GhQiBlog
+SEOTitle: 齐国恒|Gh Qi
 header-img: img/home-1.png
 email: qiguoheng@gmail.com
 description: "Talk Is Cheap Show Me The Code  "
@@ -99,16 +99,7 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "Tuya",
-        href: "http://tuya.com"
-    },{
-        title: "cctv",
-        href: "http://www.cctv.com"
-    },{
-        title: "Apple",
-        href: "https://apple.com"
-    },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
+        title: "Wlofy Zhang",
+        href: "https://wolfyzhang.com/"
     }
 ]
