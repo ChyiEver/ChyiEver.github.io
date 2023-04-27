@@ -1,14 +1,14 @@
 {
-    "name": "wsc-blog",
-    "title": "wsc Blog",
-    "author": "wsc <wsccoder@gmail.com>",
+    "name": "ghqi-blog",
+    "title": "GhQi's Blog",
+    "author": "Gh <qiguoheng@gmail.com>",
     "version": "1.7.0",
-    "homepage": "http://wsccoder.github.io",
+    "homepage": "http://chyiever.github.io",
     "repository": {
         "type": "git",
-        "url": "https://github.com/wsccoder/wsccoder.github.io"
+        "url": "https://github.com/chyiever/chyiever.github.io"
     },
-    "bugs": "https://github.com/wsccoder/wsccoder.github.io/issues",
+    "bugs": "https://github.com/chyiever/chyiever.github.io/issues",
     "devDependencies": {
         "grunt": "~0.4.5",
         "grunt-contrib-less": "~0.11.4",
