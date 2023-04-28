@@ -4,7 +4,7 @@ SEOTitle: 齐国恒的博客 | Gh Qi's Blog
 header-img: img/home-1.png
 email: qiguoheng@gmail.com
 description: "Talk Is Cheap Show Me The Code  "
-keyword: "wsc, wsccoder Blog, Gh Qi's Blog, Java, Go, iPhone, mac pro, book"
+keyword: "Gh Qi's Blog, book"
 url: "http://chyiever.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/ChyiEver/ChyiEver.github.io.git" # you code repository
@@ -99,7 +99,7 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "Wolfy Zhang",
-        href: "https://wolfyzhang.com/"
+        title: "wolfyzhang",
+        href: "https://blog.wolfyzhang.com/"
     }
 ]
