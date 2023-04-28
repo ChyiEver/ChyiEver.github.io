@@ -1,5 +1,5 @@
 > **********************************************************************************
-> 以下内容转载自 (https://github.com/wsccoder/wsccoder.github.io)，有删减。         *
+> 以下内容转载自[https://github.com/wsccoder/wsccoder.github.io](https://github.com/wsccoder/wsccoder.github.io)，有删减。
 > **********************************************************************************
 
 ## 写在前面
