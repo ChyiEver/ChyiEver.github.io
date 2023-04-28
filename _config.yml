@@ -4,7 +4,7 @@ SEOTitle: 齐国恒的博客 | Gh Qi's Blog
 header-img: img/home-1.png
 email: qiguoheng@gmail.com
 description: "Talk Is Cheap Show Me The Code  "
-keyword: "Gh Qi's Blog, book"
+keyword: "Gh Qi's Blog"
 url: "http://chyiever.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/ChyiEver/ChyiEver.github.io.git" # you code repository
@@ -19,11 +19,11 @@ sidebar-avatar: /img/19042001326291.jpg      # use absolute URL, seeing it's use
 # SNS settings
 RSS: false
 # weibo_username:     
-zhihu_username:      
+zhihu_username:      文玉亘
 github_username:    chyiever
-facebook_username:   
+facebook_username:   Ever Chyi
 jianshu_username:    
-#twitter_username:   
+twitter_username:   chyi
 
 
 
