@@ -178,6 +178,7 @@ for result in results:
 ```python
 '''
 程序功能：
+
   采用并行的方式，读取多个月的数据（每个月一个文件夹），将数据转换为mseed格式，并保存到指定文件夹中（每月一个文件夹，需提前创建好）。
 
 Author: guoheng qi
