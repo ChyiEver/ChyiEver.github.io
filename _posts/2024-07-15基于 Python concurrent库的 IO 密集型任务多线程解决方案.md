@@ -49,11 +49,12 @@ tags:								#标签
 
 在Python中，`concurrent.futures`库提供了一种高级接口来实现多线程和多进程编程。使用`ThreadPoolExecutor`可以方便地进行多线程编程。以下是一些关键点和示例：
 
-`concurrent.futures`库简介
+### `concurrent.futures`库简介 
+ 
 `ThreadPoolExecutor`：用于管理线程池，适合I/O密集型任务。
 `ProcessPoolExecutor`：用于管理进程池，适合CPU密集型任务。
 
-本文主要针对I/O密集型任务，介绍基于ThreadPoolExecutor的多线程解决方案。
+**本文主要针对I/O密集型任务，介绍基于ThreadPoolExecutor的多线程解决方案。**
   
 # 2. 基于ThreadPoolExecutor的多线程解决方案
 
@@ -62,23 +63,25 @@ tags:								#标签
 `executor.map` 是 `concurrent.futures` 模块中 `ThreadPoolExecutor` 和 `ProcessPoolExecutor` 的一个便捷方法，它用于将一个函数应用于可迭代对象的每个元素上，并收集结果。下面是 executor.map 函数参数的官方定义：
 ```python
 executor.map(func, *iterables)
---func: 要应用于每个输入项的函数。
---*iterables: 一个或多个可迭代对象，executor.map 将 func 应用于这些可迭代对象的元素。
+--func: 要应用于每个输入项的函数
+--*iterables: 一个或多个可迭代对象(executor.map 将 func 应用于这些可迭代对象的元素)
 ```
 
-用人话讲：`executor.map(func,*iterables)`的第一个参数是函数名，第二个参数中的`iterables`是一个列表，里面存放的是`func`函数的参数。`func`函数需要几个参数，列表`iterables`中就有几个元组，每个元组包含了所有线程所需的该参数的值。
+用人话讲：`executor.map(func,*iterables)`的第一个参数是函数名，第二个参数中的 **iterables** 是一个列表，里面存放的是 **func** 函数的参数。 **func** 函数需要几个参数，列表 **iterables** 中就有几个元组，每个元组包含了所有线程所需的该参数的值。
 
-例如：定义一个求两数之和函数：`sum(a,b)`。我想求1和2的和，3和4的和，5和6的和，这件事安排给3个线程来干，那么`func=sum`，`iterables=[(1, 3, 5), (2, 4, 6)]`。
+**例如**：定义一个求两数之和函数：`sum(a,b)`。我想求1和2的和，3和4的和，5和6的和，这件事安排给3个线程来干，那么`func=sum`，`iterables=[(1, 3, 5), (2, 4, 6)]`。
 
 ```python
 data_to_process = [(1, 2), (3, 4), (5, 6)]
 iterables = *zip(*data_to_process)  # 第二个参数
+
 print(iterables)    # 打印第二个参数
 ```
 
 输出为：
 
     (1, 3, 5) (2, 4, 6)
+
 ```python
 executor.map(sum,iterables) # 多线程求和
 ``` 
