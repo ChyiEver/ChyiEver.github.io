@@ -217,13 +217,15 @@ def read_file(file_path):
 def main():
 
     # 定义6个文件夹路径 
-    dir_paths = [r'.\202402', r'.\202403',r'.\202401' ] 
+    dir_paths = [r'.\202402', r'.\202403',r'.\202401' ]
+
     # 获取所有文件路径 
     all_files = [] 
     for dir_path in dir_paths: 
         all_files.extend(get_all_files(dir_path))
     # print(all_files)
-    # 定义线程数量 
+    # 定义线程数量
+
     num_threads = 15
     
     # 使用 ThreadPoolExecutor 进行并行处理 
