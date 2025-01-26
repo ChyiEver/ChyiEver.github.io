@@ -135,9 +135,11 @@ print(results)
 ```python
 from concurrent.futures import ThreadPoolExecutor
 
-# ---------------定义要执行的函数---------------   
+# ---------------定义要执行的函数---------------
+
 def process_data(arg1, arg2): 
-    # 这里可以是任何需要两个参数的逻辑  
+    # 这里可以是任何需要两个参数的逻辑
+
     return arg1 + arg2
 
 # ---------------创建数据列表------------------  
@@ -155,7 +157,8 @@ iterables = *zip(*data_to_process)
 # -------创建线程池（最大线程数不超过5个）-------    
 
 with ThreadPoolExecutor(max_workers=5) as executor: 
-    results = executor.map(process_data,iterables)  # 多线程求和   
+    results = executor.map(process_data,iterables)  # 多线程求和
+
     results = list(results) # 获取结果  
     
 # --------------打印每个线程的输出结果-----------  
@@ -203,10 +206,12 @@ def read_file(file_path):
         for i in range(16):
             tr = Trace(data=data[:,i])
             tr.stats.channel='{:02d}'.format(i+1) 
-            #!!!!!!!!!!!!!!!!!!!!!  need to modify  !!!!!!!!!!!!!!!!!!!!!  
+            #!!!!!!!!!!!!!!!!!!!!!  need to modify  !!!!!!!!!!!!!!!!!!!!!
+
             tr.stats.starttime=file_path[-22:-4]
             tr.stats.sampling_rate=100
-            #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  
+            #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
             st +=tr
         st.write(r'..\mseed'+file_path[1:-4]+'.mseed',format='MSEED')
         
@@ -215,7 +220,8 @@ def read_file(file_path):
 
 def main():
 
-    # 定义6个文件夹路径  
+    # 定义6个文件夹路径
+
     dir_paths = [r'.\202402', r'.\202403',r'.\202401' ]
 
     # 获取所有文件路径 
@@ -223,12 +229,15 @@ def main():
     for dir_path in dir_paths: 
         all_files.extend(get_all_files(dir_path))
 
-    # 定义线程数量  
+    # 定义线程数量
+
     num_threads = 15
     
-    # 使用 ThreadPoolExecutor 进行并行处理  
+    # 使用 ThreadPoolExecutor 进行并行处理
+
     with ThreadPoolExecutor(max_workers=num_threads) as executor: 
-        # 提交任务 
+        # 提交任务
+
         executor.map(read_file, all_files) 
 
 if __name__ == "__main__":
