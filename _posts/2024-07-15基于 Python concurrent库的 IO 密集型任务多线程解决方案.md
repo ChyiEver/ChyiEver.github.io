@@ -100,7 +100,8 @@ executor.map(sum,iterables) # 多线程求和
 # 方法1
 with ThreadPoolExecutor(max_workers=5) as executor:
     results = executor.map(process_data, *zip(*data_to_process))
-print(results)  
+print(results)
+
 #返回一个 concurrent.futures._base._as_completed 对象，这个对象是可迭代的
 for result in results:
     print(result)
@@ -111,6 +112,7 @@ for result in results:
     3
     7
     11
+
 ```python
 # 方式2        
 with ThreadPoolExecutor(max_workers=5) as executor:
@@ -136,20 +138,31 @@ def process_data(arg1, arg2):
     return arg1 + arg2
 
 # ---------------创建数据列表------------------
+
 # 我想求1和2的和，3和4的和，5和6的和，参数如下：
+
 data_to_process = [(1, 2), (3, 4), (5, 6)]
+
 # 使用 zip 将 data_to_process 中的元组解包为两个参数
-iterables = *zip(*data_to_process) 
+
+iterables = *zip(*data_to_process)
+
 # iterables=[ (1, 3, 5), (2, 4, 6)]
 
 # -------创建线程池（最大线程数不超过5个）-------
+
 with ThreadPoolExecutor(max_workers=5) as executor:
+
     results = executor.map(process_data,iterables)  # 多线程求和
+
     results = list(results) # 获取结果
     
 # --------------打印每个线程的输出结果-----------
+
 for result in results:
+
     print(result)
+
 ```
 ## 2.2 示例
 
@@ -192,8 +205,10 @@ def read_file(file_path):
             tr.stats.channel='{:02d}'.format(i+1)
             
             #!!!!!!!!!!!!!!!!!!!!!  need to modify  !!!!!!!!!!!!!!!!!!!!!
+
             tr.stats.starttime=file_path[-22:-4]
             # print(tr.stats.starttime,'\n')
+
             tr.stats.sampling_rate=100
             #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             
