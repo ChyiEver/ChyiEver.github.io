@@ -97,7 +97,7 @@ executor.map(sum,iterables) # 多线程求和
 要打印每个线程执行函数的输出结果，可以迭代 executor.map 返回的对象；也可以使用`list()`将其转化为一个列表。
 
 ```python
-# 方法1
+# 方法1  
 
 with ThreadPoolExecutor(max_workers=5) as executor:
     results = executor.map(process_data, *zip(*data_to_process))
@@ -116,7 +116,7 @@ for result in results:
     11
 
 ```python
-# 方式2
+# 方式2  
 
 with ThreadPoolExecutor(max_workers=5) as executor:
     results = executor.map(process_data, *zip(*data_to_process))
@@ -135,14 +135,14 @@ print(results)
 ```python
 from concurrent.futures import ThreadPoolExecutor
 
-# ---------------定义要执行的函数--------------- 
+# ---------------定义要执行的函数---------------   
 def process_data(arg1, arg2): 
-    # 这里可以是任何需要两个参数的逻辑 
+    # 这里可以是任何需要两个参数的逻辑  
     return arg1 + arg2
 
-# ---------------创建数据列表------------------
+# ---------------创建数据列表------------------  
 
-# 我想求1和2的和，3和4的和，5和6的和，参数如下：
+# 我想求1和2的和，3和4的和，5和6的和，参数如下：  
 
 data_to_process = [(1, 2), (3, 4), (5, 6)]
 
@@ -152,13 +152,13 @@ iterables = *zip(*data_to_process)
 
 # iterables=[ (1, 3, 5), (2, 4, 6)]
 
-# -------创建线程池（最大线程数不超过5个）-------
+# -------创建线程池（最大线程数不超过5个）-------    
 
 with ThreadPoolExecutor(max_workers=5) as executor: 
-    results = executor.map(process_data,iterables)  # 多线程求和 
-    results = list(results) # 获取结果 
+    results = executor.map(process_data,iterables)  # 多线程求和   
+    results = list(results) # 获取结果  
     
-# --------------打印每个线程的输出结果-----------
+# --------------打印每个线程的输出结果-----------  
 
 for result in results: 
     print(result)
@@ -186,7 +186,7 @@ import os
 from concurrent.futures import ThreadPoolExecutor
 
 def get_all_files(dir_path):
-    """获取目录下所有文件的路径"""
+    """获取目录下所有文件的路径"""  
     file_paths = []
     for root, _, files in os.walk(dir_path):
         for file in files:
@@ -194,7 +194,7 @@ def get_all_files(dir_path):
     return file_paths
 
 def read_file(file_path):
-    """读取文件并打印文件名"""
+    """读取文件并打印文件名"""  
     print(f"Reading file: {file_path}")
 
     try:
@@ -203,11 +203,10 @@ def read_file(file_path):
         for i in range(16):
             tr = Trace(data=data[:,i])
             tr.stats.channel='{:02d}'.format(i+1) 
-            #!!!!!!!!!!!!!!!!!!!!!  need to modify  !!!!!!!!!!!!!!!!!!!!! 
+            #!!!!!!!!!!!!!!!!!!!!!  need to modify  !!!!!!!!!!!!!!!!!!!!!  
             tr.stats.starttime=file_path[-22:-4]
-            # print(tr.stats.starttime,'\n') 
             tr.stats.sampling_rate=100
-            #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+            #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  
             st +=tr
         st.write(r'..\mseed'+file_path[1:-4]+'.mseed',format='MSEED')
         
@@ -216,19 +215,18 @@ def read_file(file_path):
 
 def main():
 
-    # 定义6个文件夹路径 
+    # 定义6个文件夹路径  
     dir_paths = [r'.\202402', r'.\202403',r'.\202401' ]
 
     # 获取所有文件路径 
     all_files = [] 
     for dir_path in dir_paths: 
         all_files.extend(get_all_files(dir_path))
-    # print(all_files)
-    # 定义线程数量
 
+    # 定义线程数量  
     num_threads = 15
     
-    # 使用 ThreadPoolExecutor 进行并行处理 
+    # 使用 ThreadPoolExecutor 进行并行处理  
     with ThreadPoolExecutor(max_workers=num_threads) as executor: 
         # 提交任务 
         executor.map(read_file, all_files) 
