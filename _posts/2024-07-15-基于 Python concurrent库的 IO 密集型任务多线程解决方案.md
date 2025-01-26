@@ -15,7 +15,7 @@ tags:								#标签
 
 # 前言     
 > 预计阅读时长: 2 min       
-> 原文链接：[基于 Python `concurrent.futures` 库的 I/O 密集型任务多线程解决方案](https://chyiever.github.io/2024/03/11/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AE%A1%E7%AE%97%E4%B8%A4%E4%BF%A1%E5%8F%B7%E9%A2%91%E8%B0%B1%E7%9B%B8%E5%B9%B2%E6%80%A7%E6%97%B6%E5%BF%85%E9%A1%BB%E8%A6%81%E5%8A%A0%E7%AA%97/)   
+> 原文链接：[基于 Python `concurrent.futures` 库的 I/O 密集型任务多线程解决方案](https://chyiever.github.io/2024/07/15/%E5%9F%BA%E4%BA%8E-Python-concurrent%E5%BA%93%E7%9A%84-IO-%E5%AF%86%E9%9B%86%E5%9E%8B%E4%BB%BB%E5%8A%A1%E5%A4%9A%E7%BA%BF%E7%A8%8B%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/)   
 > 原作者：Gh Qi ，如需引用转载，请注明来源。
 
 # 1. 写在前面
